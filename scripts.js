@@ -1,6 +1,11 @@
 let entries = [];
 let editIndex = -1;
 
+document.addEventListener('DOMContentLoaded', () => {
+    loadEntries();
+    renderEntries();
+});
+
 function saveEntry() {
     const entryTitle = document.getElementById('journalTitle').value;
     const entryText = document.getElementById('journalEntry').value;
@@ -25,6 +30,7 @@ function saveEntry() {
         editIndex = -1;
     }
 
+    saveEntries();
     renderEntries();
     clearInputFields();
 }
@@ -58,5 +64,17 @@ function editEntry(index) {
 
 function deleteEntry(index) {
     entries.splice(index, 1);
+    saveEntries();
     renderEntries();
+}
+
+function saveEntries() {
+    localStorage.setItem('journalEntries', JSON.stringify(entries));
+}
+
+function loadEntries() {
+    const savedEntries = localStorage.getItem('journalEntries');
+    if (savedEntries) {
+        entries = JSON.parse(savedEntries);
+    }
 }
