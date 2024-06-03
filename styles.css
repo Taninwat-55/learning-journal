@@ -15,7 +15,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 500px;
-    max-width: 90%;
+    max-width: 100%;
 }
 
 h1 {
@@ -24,7 +24,7 @@ h1 {
 
 .input-box {
     margin-bottom: 2rem;
-    margin-right: 1.5rem;
+    margin-right: 2rem;
 }
 
 input[type="text"], textarea {
@@ -46,6 +46,7 @@ button {
     background-color: #007BFF;
     color: white;
     cursor: pointer;
+    margin-right: 5px;
 }
 
 button:hover {
@@ -67,4 +68,26 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 4px;
     margin-bottom: 10px;
+}
+
+.entry-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.entry-buttons button {
+    background-color: #ff4d4d;
+}
+
+.entry-buttons button:hover {
+    background-color: #cc0000;
+}
+
+.entry-buttons .edit-button {
+    background-color: #4CAF50;
+}
+
+.entry-buttons .edit-button:hover {
+    background-color: #45a049;
 }
